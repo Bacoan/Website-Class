@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri - Bacoan</title>
+
+    <!-- Memuat Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Memuat Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .animated-element {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
+      .gallery-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      #mobile-menu {
+        transition: max-height 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- 1. Navigasi -->
+    <nav class="bg-[#000080] shadow-md sticky w-full top-0 z-50">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo dan Nama Website -->
+        <a href="index.html#home" class="flex items-center gap-3 transform hover:scale-105 animated-element">
+          <img src="IMG/PP BACOAN.jpg" alt="Logo Bacoan" class="h-9 w-9 rounded-full object-cover" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=B'" />
+          <span class="text-2xl font-bold text-white">Bacoan</span>
+        </a>
+        <!-- Link Navigasi -->
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html#home" class="text-white hover:text-gray-300 transition duration-300 transform hover:-translate-y-0.5 animated-element">Home</a>
+          <a href="index.html#about" class="text-white hover:text-gray-300 transition duration-300 transform hover:-translate-y-0.5 animated-element">About Us</a>
+          <a href="gallery.html" class="text-white font-bold border-b-2 border-white transition duration-300 transform hover:-translate-y-0.5 animated-element">Gallery</a>
+        </div>
+        <!-- Tombol menu untuk mobile -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="hidden md:hidden bg-[#000080]">
+        <a href="index.html#home" class="block text-white text-center py-3 px-4 hover:bg-[#0000A0] transition duration-300">Home</a>
+        <a href="index.html#about" class="block text-white text-center py-3 px-4 hover:bg-[#0000A0] transition duration-300">About Us</a>
+        <a href="gallery.html" class="block text-white text-center py-3 px-4 bg-[#0000A0] font-bold">Gallery</a>
+      </div>
+    </nav>
+
+    <!-- 2. Konten Galeri -->
+    <main class="container mx-auto px-6 py-12">
+      <!-- Galeri Foto Section -->
+      <section id="gallery" class="py-16">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-900">Galeri Foto</h2>
+          <p class="text-lg mt-4 text-gray-600">Kumpulan momen dan kenangan tak terlupakan.</p>
+          <div class="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Foto 1 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden animated-element gallery-card">
+            <img class="h-56 w-full object-cover" src="https://placehold.co/600x400/3498db/ffffff?text=Momen+1" alt="Foto kebersamaan 1" />
+            <div class="p-4">
+              <p class="text-center text-gray-700">Kebersamaan di awal semester.</p>
+            </div>
+          </div>
+          <!-- Foto 2 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden animated-element gallery-card">
+            <img class="h-56 w-full object-cover" src="https://placehold.co/600x400/e74c3c/ffffff?text=Momen+2" alt="Foto kebersamaan 2" />
+            <div class="p-4">
+              <p class="text-center text-gray-700">Acara tahunan kelas yang meriah.</p>
+            </div>
+          </div>
+          <!-- Foto 3 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden animated-element gallery-card">
+            <img class="h-56 w-full object-cover" src="https://placehold.co/600x400/2ecc71/ffffff?text=Momen+3" alt="Foto kebersamaan 3" />
+            <div class="p-4">
+              <p class="text-center text-gray-700">Kegiatan belajar bersama di luar kelas.</p>
+            </div>
+          </div>
+          <!-- Foto 4 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden animated-element gallery-card">
+            <img class="h-56 w-full object-cover" src="https://placehold.co/600x400/f1c40f/ffffff?text=Momen+4" alt="Foto kebersamaan 4" />
+            <div class="p-4">
+              <p class="text-center text-gray-700">Potret keceriaan Bacoan Family.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3. Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+      <div class="container mx-auto text-center">
+        <div class="mb-4">
+          <a
+            href="https://www.instagram.com/bacoan_class/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block text-gray-400 hover:text-white transition-transform duration-300 transform hover:scale-110"
+            aria-label="Instagram Bacoan Class"
+          >
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919A48.426 48.426 0 0112 2.163zm0 1.441c-3.119 0-3.482.01-4.694.06-2.836.128-4.042 1.328-4.17 4.17-.048 1.212-.059 1.574-.059 4.56s.011 3.348.059 4.56c.129 2.841 1.334 4.042 4.17 4.17 1.212.048 1.575.059 4.694.059s3.482-.011 4.694-.059c2.836-.128 4.042-1.328 4.17-4.17.048-1.212.059-1.574.059-4.56s-.011-3.348-.059-4.56c-.129-2.841-1.334-4.042-4.17-4.17A46.914 46.914 0 0012 3.604zm0 4.41a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5zm0 6.666a2.416 2.416 0 110-4.833 2.416 2.416 0 010 4.833zM16.95 6.516a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <p class="text-gray-400">&copy; 2025 Bacoan. Dibuat dengan Senang Hati.</p>
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript untuk fungsionalitas menu mobile
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
